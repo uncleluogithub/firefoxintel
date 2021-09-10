@@ -6,7 +6,6 @@ RUN tar -xvf v1.2.0.tar.gz
 RUN mkdir  /root/.vnc
 RUN echo 'TuTu' | vncpasswd -f > /root/.vnc/passwd
 RUN chmod 600 /root/.vnc/passwd
-RUN cp /noVNC-1.2.0/vnc.html /noVNC-1.2.0/index.html
 RUN echo 'cd /root' >>/tu.sh
 RUN echo "su root -l -c 'vncserver :2000 ' "  >>/tu.sh
 RUN echo 'cd /noVNC-1.2.0' >>/tu.sh
