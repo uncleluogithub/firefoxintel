@@ -7,7 +7,7 @@ RUN mkdir  /root/.vnc
 RUN echo 'TuTu' | vncpasswd -f > /root/.vnc/passwd
 RUN chmod 600 /root/.vnc/passwd
 RUN echo 'cd /root' >>/tu.sh
-RUN echo "su root -l -c 'vncserver :2000 ' "  >>/tu.sh
+RUN echo "su root -l -c 'vncserver :2000 -geometry 1360x768' "  >>/tu.sh
 RUN echo 'cd /noVNC-1.2.0' >>/tu.sh
 RUN echo './utils/launch.sh  --vnc localhost:7900 --listen 80 ' >>/tu.sh
 RUN echo root:Tu!192168|chpasswd
