@@ -6,7 +6,7 @@ RUN tar -xvf v1.2.0.tar.gz
 RUN echo 'cd /root' >>/tu.sh
 RUN echo 'su root -l -c 'vncserver :2000 -SecurityTypes None' '  >>/tu.sh
 RUN echo 'cd /noVNC-1.2.0' >>/tu.sh
-RUN echo './utils/launch.sh  --vnc localhost:7900 --listen 8888 ' >>/tu.sh
+RUN echo './utils/launch.sh  --vnc localhost:7900 --listen 80 ' >>/tu.sh
 RUN echo root:Tu!192168|chpasswd
 RUN chmod 755 /tu.sh
 EXPOSE 80
