@@ -11,7 +11,7 @@ RUN echo 'tu' | vncpasswd -f > $HOME/.vnc/passwd
 RUN chmod 600 $HOME/.vnc/passwd
 RUN echo 'whoami ' >>/tu.sh
 RUN echo 'cd ' >>/tu.sh
-RUN echo "su -l -c  'vncserver :2000 -geometry 1360x768' "  >>/tu.sh
+RUN echo "su -l -c  'vncserver :2000 -geometry 1360x768' -xstartup /bin/env  MOZ_FAKE_NO_SANDBOX=1 xfce4-session "  >>/tu.sh
 RUN echo 'cd /noVNC-1.2.0' >>/tu.sh
 RUN echo './utils/launch.sh  --vnc localhost:7900 --listen 8900 ' >>/tu.sh
 RUN chmod 755 /tu.sh
